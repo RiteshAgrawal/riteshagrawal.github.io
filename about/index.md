@@ -5,6 +5,7 @@ image:
   feature: abstract-5.jpg
 comments: false
 modified: 2016-09-09
+tags: [Python, Django, Programming, Technology]
 ---
 {: .about-image}
 ![](/images/IMG_1643.jpg){: width="350px"}
