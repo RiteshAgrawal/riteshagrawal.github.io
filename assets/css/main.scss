@@ -27,3 +27,8 @@ sitemap: false
 @import "animations";
 @import "dl-menu";
 @import "page";
+
+.about-image img  {
+    display: block;
+    margin-left: 20%;
+}
