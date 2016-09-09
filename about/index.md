@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Me
+title: About Ritesh
 image:
   feature: abstract-5.jpg
 comments: false
@@ -17,7 +17,7 @@ for most of the work and like it very much.
 
 
 I also developed webapp [kunalsir.in](http://kunalsir.in){: target="_blank"}. This webapp aims to
-feciliitate CA students in their exam preparation. It was developed using
+fecilitate CA students in their exam preparation. It was developed using
 Django (Web framework for Python) and hosted on google app engine. 
 
 Software development is my work as well as my hobby. I like to explore new
