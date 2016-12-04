@@ -7,9 +7,9 @@ comments: true
 ---
 
 
-This post will help you in getting started with python decorators. I do assume some familiarity with python language. I use python2.7 for all code snippets. 
+This post will help you in getting started with Python decorators through some real life examples. Some familiarity with Python language (v2.x) is expected.
 
-Before directly jumping into decorators, let’s take a step back and talk about python functions.  This will help in understanding the concept in a better way. 
+Before directly jumping into decorators, let’s take a step back and start with python functions.  This will help in understanding the concept in a better way. 
 
 ### Functions
 
@@ -21,9 +21,7 @@ def introduce(name):
 
 ~~~
 
-This function takes `name` as function argument and returns a string. 
-Below is the explanation of above function `introduce`:
-
+This function takes `name` as input and return a string, where:
 * *def* is the keyword used to define a function.
 * *introduce* is the name of the function.
 * Variable inside parenthesis (*name*) is the required argument for the function.
@@ -43,14 +41,14 @@ We have defined a function `print_hello_world'. Now we can assign it to a
 variable.
 
 ~~~ python
->>> world = print_hello_world
+>>> modified_world = print_hello_world
 ~~~
 (Here >\>> is denoting the python  interactive shell)
 
-Now we can call `world` just like the function `print_hello_world`.
+Now we can call `modified_world` just like the function `print_hello_world`.
 
 ~~~
->>>world()
+>>>modified_world()
 Hello World!
 ~~~
 
@@ -99,9 +97,6 @@ Here `v1` stores the return value of the function `foo` which is another functio
 7
 ~~~
 
-Thinking something? It's fine about the parameter `y` but how function `bar`
-got the value of `x` as the function `foo` has already executed and returned
-before the call to the function `v1`. Isn't it?
 
 When a function is handled as data (in our case, return as a value from another
         function), it implicitly carries information required to execute the function. This is called **closures** in python. We can check the closure of the function using `__closure__` attribute of the function. This will return a tuple containing all the closures of the function. If you want to see any content of the closure, you can do something like `v1.__closure__[0].cell_contents`. 
@@ -129,7 +124,7 @@ def print_hello_world():
     print 'After Execution'
 ~~~
 
-Is this a good way. I leave it on you. What will happen if I have several functions and need to perform the same task for all other functions too?
+Is this a good way. I leave it to you. What will happen if I have several functions and need to perform the same task for all other functions too?
 
 Another way could be to write a function that will take any other function as an argument and return the function along with performing the task before and after function execution. 
 Example:
@@ -168,7 +163,7 @@ Hello World
 After Execution
 ~~~
 
-What if we assign the new function returned by the `dec` function to
+What if, we assign the new function returned by the `dec` function to
 `print_hello_world` function again?
 
 ~~~ python
@@ -208,10 +203,10 @@ def print_hello_world():
     print 'Hello World'
 ~~~
 
-Now we are clear about decorators. Right? There may be a question wondering in
-your mind. Why do I need to return a function from the `dec` function? Just
-call the function in `dec` itself in which we can print statements along with
-executing the function passed as argument. 
+I hope by now we are clear about decorators. You might be wondering why do I 
+need to return a function from the `dec` function? Just call the function 
+in `dec` itself in which we can print statements along with executing the 
+function passed as argument. 
 Example:
 
 ~~~ python
