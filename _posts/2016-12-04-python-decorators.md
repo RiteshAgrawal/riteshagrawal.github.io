@@ -7,7 +7,7 @@ comments: true
 ---
 
 
-This post will help you in getting started with Python decorators through some real life examples. Some familiarity with Python language (v2.x) is expected.
+This post will help you in getting started with Python decorators through some real life examples. Some familiarity with Python language is expected.
 
 Before directly jumping into decorators, let’s take a step back and start with python functions.  This will help in understanding the concept in a better way. 
 
@@ -22,6 +22,8 @@ def introduce(name):
 ~~~
 
 This function takes `name` as input and return a string, where:
+
+
 * *def* is the keyword used to define a function.
 * *introduce* is the name of the function.
 * Variable inside parenthesis (*name*) is the required argument for the function.
@@ -34,7 +36,7 @@ argument to a function or return as a value from a function.
 
 ~~~ python
 def print_hello_world():
-    print 'Hello World!'
+    print('Hello World!')
 ~~~
 
 We have defined a function `print_hello_world'. Now we can assign it to a
@@ -56,9 +58,9 @@ We can also pass a function to another function as an argument.
 
 ~~~ python
 def execute(func):
-    print 'Before execution'
+    print('Before execution')
     func()
-    print 'After execution'
+    print('After execution')
 ~~~
 
 So now when we pass `print_hello_world` function to `execute` function, the output will be as follows:
@@ -93,7 +95,7 @@ Let's see this code in action.
 Here `v1` stores the return value of the function `foo` which is another function `bar`. Now what will happen if we call `v1` with some parameter?
 
 ~~~ python
->>>print v1(5)
+>>>print(v1(5))
 7
 ~~~
 
@@ -119,9 +121,9 @@ Example:
 
 ~~~ python
 def print_hello_world():
-    print 'Before Execution'
-    print 'Hello World!'
-    print 'After Execution'
+    print('Before Execution')
+    print('Hello World!')
+    print('After Execution')
 ~~~
 
 Is this a good way. I leave it to you. What will happen if I have several functions and need to perform the same task for all other functions too?
@@ -131,13 +133,13 @@ Example:
 
 ~~~ python
 def print_hello_world():
-    print 'Hello World'
+    print('Hello World')
 
 def dec(func):
     def nest_func(*args, **kwargs):
-        print 'Before Execution'
+        print('Before Execution')
         r =  func(*args, **kwargs)
-        print 'After Execution'
+        print('After Execution')
         return r
     return nest_func
 ~~~
@@ -200,7 +202,7 @@ its shorthand syntax:
 ~~~ python
 @dec
 def print_hello_world():
-    print 'Hello World'
+    print('Hello World')
 ~~~
 
 I hope by now we are clear about decorators. You might be wondering why do I 
@@ -211,9 +213,9 @@ Example:
 
 ~~~ python
 def dec1(func):
-    print 'Before Execution'
+    print('Before Execution')
     func()
-    print 'After Execution'
+    print('After Execution')
 ~~~
 
 I have few questions for you in answer to this question. Suppose I agree with
@@ -231,9 +233,9 @@ could be like
 
 ~~~ python
 def dec2(func, arg1, arg2):
-    print 'Before Execution'
+    print('Before Execution')
     func(arg1, arg2)
-    print 'After Execution'
+    print('After Execution')
 ~~~
 
 But here the problem is how will we get the value of arg1 and arg2 at time of
@@ -254,12 +256,12 @@ required to return a function.
 * It can be used to compute execution time of any function.
 
 ~~~ python
-def decorator(func):
+def compute_execution_time(func):
     def nest_func(*args, **kwargs):
         start = time.time()
         response = func(*args, **kwargs)
         end = time.time()
-        print end-start
+        print(end-start)
         return response
     return nest_func
 ~~~
